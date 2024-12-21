@@ -14,7 +14,7 @@ st.write(
 
 
 # Load the data from the CSV file
-@st.cache_data
+# @st.cache_data
 def load_data():
     df = pd.read_csv("data/notas.csv")
     return df
