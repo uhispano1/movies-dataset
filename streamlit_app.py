@@ -33,7 +33,7 @@ search_id = st.text_input("Enter the ID to search for:")
 
 if search_id:
     # Filter the dataset based on the input ID
-    result = df[df["ID"].astype(str) == search_id]
+    result = df[df["cedula"].astype(str) == search_id]
 
     if not result.empty:
         st.success("Record found:")
