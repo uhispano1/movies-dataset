@@ -27,3 +27,16 @@ df = load_data()
 # Display the dataset for reference
 st.write("### Dataset Preview")
 st.dataframe(df, use_container_width=True)
+
+st.write("### Search for a Record by ID")
+search_id = st.text_input("Enter the ID to search for:")
+
+if search_id:
+    # Filter the dataset based on the input ID
+    result = df[df["ID"].astype(str) == search_id]
+
+    if not result.empty:
+        st.success("Record found:")
+        st.dataframe(result, use_container_width=True)
+    else:
+        st.error("No record found with the given ID.")
