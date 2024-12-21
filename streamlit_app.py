@@ -19,6 +19,7 @@ st.write(
 @st.cache_data
 def load_data():
     df = pd.read_csv("data/notas.csv")
+    df["cedula"] = df["cedula"].astype(str)
     return df
 
 
