@@ -3,13 +3,18 @@ import pandas as pd
 import streamlit as st
 
 # Show the page title and description.
-st.set_page_config(page_title="Movies dataset", page_icon="🎬")
-st.title("🎬 Movies dataset")
+st.set_page_config(page_title="Notas de Arquitectura de Bases de Datos TAND05", page_icon="📝")
+st.title("📝 Notas de Arquitectura de Bases de Datos TAND05")
 st.write(
     """
-    This app visualizes data from [The Movie Database (TMDB)](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata).
-    It shows which movie genre performed best at the box office over the years. Just 
-    click on the widgets below to explore!
+    Esta aplicación permite buscar el registro de un estudiante ingresando su **numero de cédula**. 
+    """
+)
+st.write(
+    """
+    ### Instrucciones:
+    1. Ingrese su **numero de cédula** en el campo de texto para buscar su registro.
+    2. Si el registro existe, se mostrará en la tabla debajo.
     """
 )
 
@@ -29,15 +34,15 @@ df["cedula"] = df["cedula"].astype(str)
 st.write("### Dataset Preview")
 st.dataframe(df, use_container_width=True)
 
-st.write("### Search for a Record by ID")
-search_id = st.text_input("Enter the ID to search for:")
+st.write("### Buscar registro por número de cédula")
+search_id = st.text_input("Introduce el número de cédula a consultar:")
 
 if search_id:
     # Filter the dataset based on the input ID
     result = df[df["cedula"].astype(str) == search_id]
 
     if not result.empty:
-        st.success("Record found:")
+        st.success("Registro encontrado:")
         st.dataframe(result, use_container_width=True)
     else:
-        st.error("No record found with the given ID.")
+        st.error("No hay registro encontrado.")
