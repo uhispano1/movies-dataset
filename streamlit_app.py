@@ -23,6 +23,7 @@ def load_data():
 
 
 df = load_data()
+df["cedula"] = df["cedula"].astype(str)
 
 # Display the dataset for reference
 st.write("### Dataset Preview")
