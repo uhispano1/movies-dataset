@@ -31,8 +31,8 @@ df = load_data()
 df["cedula"] = df["cedula"].astype(str)
 
 # Display the dataset for reference
-# st.write("### Dataset Preview")
-# st.dataframe(df, use_container_width=True)
+ st.write("### Dataset Preview")
+ st.dataframe(df, use_container_width=True)
 
 st.write("### Buscar registro por número de cédula")
 search_id = st.text_input("Introduce el número de cédula a consultar:")
