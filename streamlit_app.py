@@ -24,3 +24,6 @@ def load_data():
 
 df = load_data()
 
+# Display the dataset for reference
+st.write("### Dataset Preview")
+st.dataframe(df, use_container_width=True)
