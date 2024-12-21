@@ -12,9 +12,12 @@ st.write(
     """
 )
 
+
 # Load the data from the CSV file
 @st.cache_data
 def load_data():
-    return pd.read_csv("data/notas.csv")
+    df = pd.read_csv("data/notas.csv")
+    return df
+
 
 df = load_data()
