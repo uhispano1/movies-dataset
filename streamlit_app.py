@@ -18,6 +18,4 @@ st.write(
 def load_data():
     df = pd.read_csv("data/notas.csv")
     return df
-
-
 df = load_data()
